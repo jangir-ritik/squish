@@ -1,25 +1,34 @@
-appId: com.optimizer.batch-image
-productName: Batch Image Optimizer
+appId: com.ritikjangir.squish
+productName: Squish
+copyright: Copyright © 2026 Ritik Jangir
+
 directories:
   buildResources: assets
-  output: dist
+  output: release # changed from dist — avoids conflict with Vite's output
+
 files:
-  - from: dist
-    to: app
-  - from: dist-electron
-    to: .
+  - dist/**/* # renderer (built by Vite)
+  - dist-electron/**/* # main process + preload
+
 win:
   target:
     - nsis
     - portable
+  icon: assets/icon.ico
+
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
+  shortcutName: Squish
+
 mac:
   target:
     - dmg
     - zip
+  icon: assets/icon.icns
+
 linux:
   target:
     - AppImage
     - deb
+  icon: assets/icon.png

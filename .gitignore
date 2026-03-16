@@ -10,6 +10,11 @@
 # production
 /build
 
+#electron
+release/
+dist/
+dist-electron/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
