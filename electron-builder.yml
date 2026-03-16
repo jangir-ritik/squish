@@ -1,0 +1,25 @@
+appId: com.optimizer.batch-image
+productName: Batch Image Optimizer
+directories:
+  buildResources: assets
+  output: dist
+files:
+  - from: dist
+    to: app
+  - from: dist-electron
+    to: .
+win:
+  target:
+    - nsis
+    - portable
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+mac:
+  target:
+    - dmg
+    - zip
+linux:
+  target:
+    - AppImage
+    - deb
