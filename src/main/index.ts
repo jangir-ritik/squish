@@ -23,7 +23,7 @@ function createWindow() {
     : `file://${path.join(__dirname, "../dist/index.html")}`;
 
   mainWindow.loadURL(url);
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   if (isDev()) {
     mainWindow.webContents.openDevTools();
